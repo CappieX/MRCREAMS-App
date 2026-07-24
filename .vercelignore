@@ -1,0 +1,15 @@
+# Ignore local files and directories in Vercel deployments
+node_modules/
+**/node_modules/
+*.log
+*.env
+*.env.local
+*.env.development
+*.env.production
+frontend/build/
+backend/mrcreams.db
+backend/*.db
+frontend/*.db
+**/*.sqlite
+**/*.sqlite3
+.DS_Store

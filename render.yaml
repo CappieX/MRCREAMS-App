@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mrcreams-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+
+  - type: static
+    name: mrcreams
+    rootDir: frontend
+    buildCommand: npm install --legacy-peer-deps && CI=false npm run build
+    publishPath: build
+    envVars:
+      - key: NODE_VERSION
+        value: 18.20.0
+      - key: REACT_APP_API_BASE_URL
+        value: https://mrcreams-backend.onrender.com/api
